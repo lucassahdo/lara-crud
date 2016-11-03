@@ -1,0 +1,189 @@
+/*
+  Author: Lucas Sahdo
+  Version: 1.0
+*/
+
+/*************************
+*******Typography******
+**************************/
+
+@import url(https://fonts.googleapis.com/css?family=Lato:400,900);
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 500;
+  color: #666;
+  background-color: #FFF;
+}
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 18px;
+}
+a {
+  text-decoration: none;
+  -webkit-transition: 300ms;
+  -moz-transition: 300ms;
+  -o-transition: 300ms;
+  transition: 300ms;
+}
+a:focus,
+a:hover {
+  text-decoration: none;
+  outline: none
+}
+.section-header .section-title {
+	font-size: 35px;
+	text-transform: uppercase;
+	color: #272727;
+	position: relative;
+	margin: 0 0 20px;
+	font-weight: bold;
+}
+.section-subtitle {
+	font-size: 18px;
+	text-transform: uppercase;
+	padding-bottom: 20px;
+	margin: 20px auto;
+	margin-bottom: 50px;
+	text-align: center;
+	font-weight: bold;
+}
+.section-divider {
+	width: 100%;
+	height: 35px;
+	background: url('../img/divider.png') no-repeat center center;
+	margin: 5px 0 10px;
+}
+.heading {
+  padding-bottom:90px;
+}
+
+/*************************
+******* Home Page ********
+**************************/
+
+/*=================================================================
+	page banner
+==================================================================*/
+#page-banner {
+	margin-top: -100px;
+	overflow: hidden;
+	position: relative;
+}
+#page-banner .banner-wrapper {
+	height: 500px;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+    background-color: #FF4938;
+}
+#page-banner .banner-wrapper {
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 400px;
+}
+#page-banner .banner-wrapper:after {
+	content: " ";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+#page-banner .banner-wrapper .content-box {
+	position: absolute;
+	top: 50%;
+	margin-top: -10px;
+	left: 0;
+	right: 0;
+
+	text-align: center;
+	text-transform: uppercase;
+
+	z-index: 15;
+
+	color: #fff;
+}
+#page-banner .banner-wrapper .content-box h1 {
+	color: #fff;
+	font-size: 80px;
+	font-weight: 700;
+	margin-bottom: 30px;
+}
+#page-banner .banner-wrapper .content-box p {
+	font-size: 18px;
+	font-weight: 500;
+}
+
+
+
+/*=================================================================
+	crud-section
+==================================================================*/
+#crud-section {
+  padding: 120px 10px 70px 10px;
+  background-color: #eeeeee;
+}
+#crud-section h4 {
+	font-weight: bold;
+}
+#crud-section .left-col h4 {
+  text-align: right;
+}
+#crud-section .left-col p {
+  text-align: right;
+}
+#crud-section .right-col h4 {
+  text-align: left;
+}
+#crud-section .right-col p {
+  text-align: left;
+}
+#crud-section .panel {
+    border-color: #FF4938;
+}
+#crud-section .panel-heading {
+    background-color: #FF4938;
+}
+#crud-section table{
+    border-color: 1px solid #FF4938;
+
+}
+
+
+/*=================================================================
+	footer
+==================================================================*/
+#footer {
+  color:#fff;
+  background-color: #FF4938;
+}
+.footer-top {
+  position: relative;
+  padding:30px 0
+}
+.footer-logo {
+  display: table;
+  margin: 10px auto;
+}
+/*all right reserved part*/
+.footer-bottom {
+  background-color: #000;
+  padding: 20px 0 10px;
+  font-weight: 500;
+  text-align: center;
+}
+.footer-bottom a {
+  color: #fff;
+}
+.footer-bottom a:hover {
+  color: #FF4938;
+}
