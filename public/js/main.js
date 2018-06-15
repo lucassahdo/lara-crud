@@ -1,8 +1,3 @@
-/*
-  Author: Lucas Sahdo
-  Version: 1.0
-*/
-
 /* ========================================================================= */
 /*	Ajax Setup
 /* ========================================================================= */
@@ -18,7 +13,7 @@ $.ajaxSetup({
 /* ========================================================================= */
 function addRow(data){
 	var row = '<tr id="client'+data.id+'" data-id="'+data.id+'">'+
-			//   '<td>'+ data.id +'</td>'+
+			  '<td>'+ data.id +'</td>'+
 			  '<td>'+ data.name +'</td>'+
 			  '<td>'+ data.address +'</td>'+
 			  '<td>'+ data.phone +'</td>'+
@@ -30,6 +25,7 @@ function addRow(data){
 			  '<button type="button " class="btn btn-danger btn-delete" style="width:100%">Apagar</button>'+
 			  '</td>'+
 			  '</tr>';
+
 	$('tbody').append(row);
 };
 
@@ -38,16 +34,16 @@ function addRow(data){
 /* ========================================================================= */
 function updateRow(data){
 	var row = '<tr id="client'+data.id+'" data-id="'+data.id+'">'+
-			//   '<td>'+ data.id +'</td>'+
+			  '<td>'+ data.id +'</td>'+
 			  '<td>'+ data.name +'</td>'+
 			  '<td>'+ data.address +'</td>'+
 			  '<td>'+ data.phone +'</td>'+
 			  '<td>'+ data.email +'</td>'+
 			  '<td>'+
-			  '<button type="button " class="btn btn-success btn-edit" data-id="{{ $client->id }}" data-url="{{ URL::to("/getUpdate") }}" style="margin-right:10px; width:100%;">Editar</button>'+
+			  '<button type="button " class="btn btn-success btn-edit" style="margin-right:10px; width:100%;">Editar</button>'+
 			  '</td>'+
 			  '<td>'+
-			  '<button type="button " class="btn btn-danger btn-delete" data-id="{{ $client->id }}" data-url="{{ URL::to("/delete") }}" style="width:100%">Apagar</button>'+
+			  '<button type="button " class="btn btn-danger btn-delete" style="width:100%">Apagar</button>'+
 			  '</td>'+
 			  '</tr>';
 
@@ -115,12 +111,8 @@ $('tbody').delegate('.btn-delete','click',function(){
 
 // get client data and shows modal
 $('tbody').delegate('.btn-edit','click',function(){
-	//$('#editClientModal').modal('show');
-
-	var id =$(this).closest('tr').data('id');
+	var id = $(this).closest('tr').data('id');
 	var url = '/getUpdate';
-
-	//alert(id);
 
 	$.ajax({
 		type : 'post',
@@ -190,11 +182,12 @@ $('#frmNewClient').on('submit',function(e){
 		console.log(data);
 
 		//atualiza tabela
-		addRow(data);
+		//addRow(data);
+		location.reload();
 
-		$(this).trigger('reset');
-		$('#newClientModal').modal('hide');
-		toastr.success('OK', 'Cliente Adicionado', {timeOut: 2000});
+		// $(this).trigger('reset');
+		// $('#newClientModal').modal('hide');
+		// toastr.success('OK', 'Cliente Adicionado', {timeOut: 2000});
 	});
 
 	// avoid ajax submit twice
@@ -239,11 +232,12 @@ $('#frmEditClient').on('submit',function(e){
 		console.log(data);
 
 		//atualiza tabela
-		updateRow(data);
+		//updateRow(data);
+		location.reload();
 
-		$(this).trigger('reset');
-		$('#editClientModal').modal('toggle');
-		toastr.success('OK', 'Cliente Atualizado', {timeOut: 2000});
+		// $(this).trigger('reset');
+		// $('#editClientModal').modal('toggle');
+		// toastr.success('OK', 'Cliente Atualizado', {timeOut: 2000});
 	});
 
 	// avoid ajax submit twice
